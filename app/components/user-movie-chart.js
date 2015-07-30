@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 	options: {
+		chart: {
+            type: 'column'
+        },
         title: {
             text: '电影受欢迎度分布',
             x: -20 //center
