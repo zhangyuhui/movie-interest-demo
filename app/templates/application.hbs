@@ -1,1 +1,29 @@
-{{user-movie-chart}}
+<div class="users">
+    <span>当前用户：</span>
+    {{view "select"
+           content=users
+           optionValuePath="content.id"
+           optionLabelPath="content.name"
+    	   value=userId
+    	   prompt="选择用户"}}
+</div>
+
+<div class="movies">
+    <span>电影数目：</span>
+    {{view "select"
+           content=moviesCounts
+    	   value=moviesCount
+    	   prompt="选择数目"}}
+</div>
+
+{{user-movie-chart
+    user=user
+	movies=movies
+	trRatings=trRatings
+	mfRatings=mfRatings
+	naRatings=naRatings
+    loading=loading}}
+
+{{#if loading}}
+{{view 'loading-bar'}}
+{{/if}}
